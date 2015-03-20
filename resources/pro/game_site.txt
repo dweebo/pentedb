@@ -1,0 +1,4 @@
+"2","Pente.org","Pente.org","http://www.pente.org/"
+"1","It's Your Turn","IYT","http://www.itsyourturn.com/"
+"3","Richard's PBeM Server","PBeM","http://www.gamerz.net/pbmserv/"
+"4","BrainKing","BK","http://www.brainking.com"

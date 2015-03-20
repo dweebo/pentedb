@@ -1,0 +1,6 @@
+*.class
+.settings
+build/target
+build/pentedb.jar
+bin
+*.exe

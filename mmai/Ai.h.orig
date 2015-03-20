@@ -1,0 +1,55 @@
+// Ai.h : header file
+//
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+class CAi
+{
+// Construction
+public:
+	CAi();
+
+// Attributes
+protected: 
+CPoint p1xy[24], p2xy[24], p3xy[24];    
+int *pfhn, *pFk, *pFh; //fuk[361][4], fhole[500][4], 
+int *pTr, *pTm, *pTo, *pTi;
+int fr, en, np, cp, Kgame, cap1, turn, tourn, multipbem, breadth;
+int bd[19][19], cc[20][7], p1d[24], p2d[24], p3d[24], cap2, cap3; 
+int sco[7], exfl[20], exel[20], mxst, plv, extnt, extent;
+int rotx[8], roty[8], rotf[8], maxscr;
+int fhn, mvct, lvl, gf, ppd, vct, ferr, erfl, alpha, beta, a1, b1;
+int ciel[20][7], mxnd[20], dx[8], dy[8], sec[3];
+int mxvt[19], mxvf[19];
+
+unsigned int *pHashY, HValX[20], HValY[20], 
+  TableX[362], TableY[362];
+short int *pHashS;
+unsigned char *pHashD;
+
+public:
+int bmove, bscr; 
+CPenteDoc* pDoc;
+
+// Operations
+public:
+int CAi::Init(CPenteDoc* ptDoc);
+int CAi::Move(void);
+
+protected: 
+int Tree();
+int Eval(int x, int y);
+int Score(CPoint pt);        
+
+
+// Implementation
+public:
+	virtual ~CAi();
+
+
+protected:
+
+};
+
+/////////////////////////////////////////////////////////////////////////////

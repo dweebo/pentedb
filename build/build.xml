@@ -1,0 +1,43 @@
+<project name="pentedb" default="full" basedir=".">
+	
+  <target name="init">
+
+    <!-- init DSTAMP property -->
+    <tstamp />
+    
+    <!-- access to environment variables -->
+    <property environment="env" />
+  	
+    <!-- source directory locations -->
+    <property name="dsg.src" value=".." />
+    <property name="dsg.src.build" value="${dsg.src}/build" />
+    <property name="dsg.src.java" value="${dsg.src}/java" />
+    <property name="dsg.src.lib" value="${dsg.src}/lib" />
+
+    <property name="dsg.classpath" value="${dsg.src.lib}/log4j-1.2.8.jar;
+					  ${dsg.src.lib}/swingx-0.9.1.jar" />
+
+  </target>
+ 
+  <target name="full" depends="init">
+
+    <mkdir dir="${dsg.src.build}/target" />
+
+    <javac srcdir="${dsg.src.java}"
+           includes="org/pente/gameDatabase/swing/Main.java,org/pente/gameDatabase/swing/install/**"
+           destdir="${dsg.src.build}/target"
+           debug="on"
+           debuglevel="lines,vars,source"
+           classpath="${dsg.classpath}" />
+
+    <copy todir="${dsg.src.build}/target/org/pente/gameDatabase/swing/images">
+    	<fileset dir="${dsg.src}/resources/images" />
+    </copy>
+    	
+    <jar jarfile="pentedb.jar">
+      <fileset dir="${dsg.src.build}/target" />
+    </jar>
+
+  </target>
+	
+</project>
