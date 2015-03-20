@@ -341,7 +341,7 @@ Function DetectJRECore
  
   ;MessageBox MB_OK "Detecting JRE"
   ReadRegStr $1 HKLM "SOFTWARE\JavaSoft\Java Runtime Environment" "CurrentVersion"
-  MessageBox MB_OK "Read : $1"
+  ;MessageBox MB_OK "Read : $1"
   StrCmp $1 "" DetectTry2
   ReadRegStr $2 HKLM "SOFTWARE\JavaSoft\Java Runtime Environment\$1" "JavaHome"
   ;MessageBox MB_OK "Read 3: $2"
