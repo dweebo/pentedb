@@ -1,0 +1,47 @@
+3/20/15
+- It's really been 7 years??  Time to release this code as open source!
+- Added support for 64 bit systems, should work with 64bit versions of windows/java
+
+7/11/08
+-Added AI functionality to game analysis window
+-AI visualization changes
+-Added "threat" visualization on board, shows trias/fours of each player and potential captures. 
+-Can now scroll through moves using mouse wheel, very useful
+-Fixed right-click go back in game entry window of non-editable game
+-Game over message on board
+-Error message added if attempt to open 2 instances of program
+-Other minor improvements and bug fixes
+
+7/3/08
+-AI improvements
+
+6/25/08
+-Added Mark's AI
+
+4/7/08
+-Fixed incorrect display of all games in games window
+-Fixed problem with mmai opening move database
+
+4/1/08
+-Prevent duplicate games from being stored during copy to db
+-Fixed problem with previous version not being able to view games
+-Import progress bar issues sort of fixed
+-Right-click popup issues on game list fixed
+
+3/6/08
+-Worked more on import/export code problems
+-Improved the progress bars for imports
+-Prevent duplicate games from being stored during import
+
+2/27/08 build2.2
+-Fixed broken import code
+-New added games now show up in cached game analysis game results
+-New feature to open the moves of a game into a game analysis window.  Open a game and then select Tools | Open in game analysis.
+-Fixed coloring of node names in game analysis view.
+
+2/25/08 build2.1
+-Added all games button to game tab, to load all matching games.  This is only for local databases, not searching pente.org online db.
+-Fixed bugs with display of games in matching games list.
+-Fixed bugs with deleting multiple games.  Also added progress bar if deleting multiple games takes awhile to complete.
+-Reworked import/export code to not use nearly as much memory.
+
