@@ -2,8 +2,9 @@ package org.pente.gameDatabase.swing;
 
 import java.awt.*;
 
-import  sun.audio.*;
-
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.border.*;
 
 import java.awt.event.*;
@@ -585,10 +586,14 @@ public class ViewGamePanel extends JPanel implements TabComponent, VenueListener
 			makeMove(newMove);
 
 			try {
-				InputStream in = new FileInputStream("yourturn.au");
-				AudioStream as = new AudioStream(in);
-				AudioPlayer.player.start(as);
-			} catch (Exception e) { e.printStackTrace(); }
+                AudioInputStream audioInputStream =
+                        AudioSystem.getAudioInputStream(new File("yourturn.wav"));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();			
+			} catch (Exception e) { 
+			    e.printStackTrace(); 
+			}
 
 		}
 		public void aiEvaluateCallBack() {

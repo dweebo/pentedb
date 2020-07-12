@@ -104,8 +104,9 @@ import org.pente.gameServer.core.SimpleGridPiece;
 import org.pente.mmai.Ai;
 import org.pente.mmai.AiListener;
 
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  * @author dweebo
@@ -667,11 +668,15 @@ public class GameReviewBoard extends JPanel implements TabComponent, VenueListen
 
 					addMove(newMove);
 
-					try {
-						InputStream in = new FileInputStream("yourturn.au");
-						AudioStream as = new AudioStream(in);
-						AudioPlayer.player.start(as);
-					} catch (Exception e) { e.printStackTrace(); }
+                    try {
+                        AudioInputStream audioInputStream =
+                                AudioSystem.getAudioInputStream(new File("yourturn.wav"));
+                        Clip clip = AudioSystem.getClip();
+                        clip.open(audioInputStream);
+                        clip.start();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
 				}
 				public void aiEvaluateCallBack() {

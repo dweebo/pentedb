@@ -4,3 +4,4 @@ build/target
 build/pentedb.jar
 bin
 *.exe
+.idea
