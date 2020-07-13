@@ -11,12 +11,12 @@ public class HttpConstants {
     }
 
     /** Protocol header */
-    public static final String 	HTTP = 				"http://";
+    public static final String 	HTTP = 				"https://";
     /** End line string */
     public static final String 	END_LINE = 			"\r\n";
 
     /** The default http web server port */
-    public static final int     HTTP_PORT =         80;
+    public static final int     HTTP_PORT =         443;
 
     public static final int    STATUS_OK =          200;
     public static final int    STATUS_BAD_REQUEST = 400;

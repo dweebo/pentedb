@@ -1100,7 +1100,7 @@ public class Main {
 						drop.acceptDrop(DnDConstants.ACTION_COPY);
 
 						URL url = (URL) tr.getTransferData(df);
-						if (!url.getProtocol().equals("http")) {
+						if (!url.getProtocol().equals("https")) {
 							continue;
 						}
 
@@ -1508,7 +1508,8 @@ public class Main {
 		if (System.getProperty("host") != null) {
 			return System.getProperty("host");
 		} else {
-			return "pente.org";
+            return "pente.org";
+//            return "development.pente.org";
 		}
 	}
 
@@ -1554,7 +1555,7 @@ public class Main {
 
 			StringBuffer encryptedPasswordBuf = new StringBuffer();
 			StringBuffer sessionIdBuf = new StringBuffer();
-			httpLoader = new PlunkHttpLoader(getHost(), 80, localName, localPassword);
+			httpLoader = new PlunkHttpLoader(getHost(), 443, localName, localPassword);
 			int loginStatus = 500;
 			try {
 				loginStatus = httpLoader.remoteLogin(encryptedPasswordBuf, sessionIdBuf);
@@ -1580,7 +1581,7 @@ public class Main {
 				password = localPassword;
 
 				penteOrgGameSearcher = new HttpGameStorerSearcher(
-					getHost(), 80, new PGNGameFormat(),
+					getHost(), 443, new PGNGameFormat(),
 					"/gameServer/controller", name, password);
 				((HttpGameStorerSearcher) penteOrgGameSearcher).setCookie(sessionIdBuf.toString());
 			}

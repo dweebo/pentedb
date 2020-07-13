@@ -36,6 +36,9 @@
     	
     <jar jarfile="pentedb.jar">
       <fileset dir="${dsg.src.build}/target" />
+        <manifest>
+            <attribute name="Main-Class" value="org.pente.gameDatabase.swing.Main"/>
+        </manifest>
     </jar>
 
   </target>
