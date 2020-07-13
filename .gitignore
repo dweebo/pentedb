@@ -4,3 +4,12 @@ build/target
 build/pentedb.jar
 bin
 *.exe
+<<<<<<< Updated upstream
+.idea
+=======
+db
+mac_os/images
+mac_os/pente.tbl
+mac_os/pente.scs
+mac_os/images
+>>>>>>> Stashed changes
