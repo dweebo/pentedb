@@ -9,6 +9,9 @@ import java.util.*;
 import org.pente.gameDatabase.*;
 import org.pente.filter.http.*;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+
 /** This class provides common methods needed by classes which plan on
  *  sending/receiving information to/from a http interface which provides access
  *  to the dsg database.  This simplifies the work that individual storers
@@ -74,7 +77,9 @@ public abstract class AbstractHttpStorer {
      *  @exception Exception If the connection cannot be made
      */
     private Socket getConnection() throws Exception {
-        return new Socket(host, port);
+        SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+        SSLSocket socket = (SSLSocket) factory.createSocket(host, port);
+        return socket;
     }
 
     /** Creates the request to send to the http server
